@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+  }
+
+  body {
+    overflow-x: hidden;
+
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.9;
+    color: orange;
+  }
+  
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding-bottom: 15px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+    padding-top: 20px;
+    z-index: 10;
+  }
+
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 40px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  .carrossel{
+    padding-top: 5px;
+    background-color: #23232e;
+  }
+
+  
+/* blocos com informações */
+h4 {
+  font-size: 50px;
+}
+.sessao-bloco{
+  display: flex;
+  justify-content: space-around;
+  background-color: #23232e;
+  color: white;
+  padding: 15px;
+}
+
+.textoacima {
+  padding: 25px;
+  background-color: #23232e;
+  display: flex;
+  justify-content: center;
+  color: brown;
+}
+
+.textoabaixo {
+  text-align: center;
+  padding-top: 25px;
+  padding-top: 25px;
+  background-color: #23232e;
+  color: purple;
+}
+
+.logo-insta {
+  height: 30px;
+  width: 30px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  padding-top: 110px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+.flip-card-back{
+  padding-top: 75px;
+}
+.flip-card-front {
+  background-image: linear-gradient(45deg, #6f04d9, #d9048e);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .flip-card-front img {
+  width: 220px;
+ margin-top: 1rem; 
+} */
+
+.flip-card-back {
+  background-image: linear-gradient(315deg, #6f04d9, #8a045c);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.blocoTexto {
+  color: black;
+  font-size: larger;
+  font-size: 30px;
+}
+.novidades {
+  color: yellowgreen;
+  font-size: 25px;
+}
+
+.foto-produto2 {
+  width: 50%;
+  height: 50%;
+}
+
+.depoimentos{
+  width: 50%;
+  height: 50%;
+}
+
+
+
+  @media (max-width: 600px) {
+    body {
+      overflow-x: hidden;
+
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 92vh;
+      background: #23232e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 1;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+
+    /* configurações para carrosseis*/
+
+    
+    .carrossel{
+      background-color: #23232e;
+      z-index: 0;
+    }
+
+    .carousel-indicators{
+      z-index: 0;
+    }
+    /* configurações para carrosseis*/
+
+    /* encomende seus produtos */
+
+    .foto-produto {
+      width: 550px;
+      height: 250px;
+    }
+
+    .depoimentos{
+      width: 400px;
+    }
+    
+    /* encomende seus produtos */
+
+    /* Campo flesh liss */
+
+    .ninguem_te_conta {
+      text-align: center;
+      
+    }
+
+    .ninguem_te_conta_paragrafo{
+    width: 500px;
+    font-size: 14px;
+    padding: 30px;
+    text-align: justify;
+    }
+
+  
+
+
+
+    /* Campo flesh liss */
+
+
+  }
+
+  
+  
+  .nav-list.active {
+    transform: translateX(0);
+
+    
+
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      
+    }
+  
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+  /* primeira sessão main */
+  .primeiraParte{
+    padding-top: 25px;
+    background-color:#23232e ;
+    max-width: 100%;
+    height:100%;
+  }
+
+  .saudacao{
+    text-align: center;
+  }
+
+  .tratamento {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+  }
+
+  h1{
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+  
+  }
+  h2{
+    font-size: 35px;
+  }
+
+
+  .bemVindo {
+    font-size: 20px;
+    padding: 15px 5px 5px 15px;
+    background-color: #23232e;
+    color: #fff;
+  }
+
+  .list{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+
+  }
+
+  h1 {
+    color: brown;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+  p {
+    color: white;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    /* background-color: #23232e; */
+    ;
+    border-radius: 10px;
+  }
+  h2 { 
+    color: yellow;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  .post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+  }
+
+  .foto{ 
+    height: 500px;
+    width: 400px;
+    padding: 15px;
+    border-radius: 50px;
+  }
+
+  .foto-leshliss {
+    height: 400px;
+    width: 700px;
+    margin-top: 25px;
+    border-radius: 20px;
+  }
+
+  .foto-minha-historia {
+    height: 500px;
+  }
+
+  .paragrafo-depoimento {
+    width: 1400px;
+    font-size: 20px;
+    padding: 30px;
+    text-align: justify;
+  }
+
+  .ninguem_te_conta_paragrafo{
+    width: 1400px;
+    font-size: 20px;
+    padding: 30px;
+    text-align: justify;
+  }
+
+  .paragafo_tratamento {
+    width: 1400px;
+    font-size: 20px;
+    padding: 30px;
+    text-align: justify;
+  }
+
+
+
+
+  /* primeira sessão main */
+
+  @media (max-width: 600px) {
+
+    h1{
+      padding-top: 25px;
+      font-size: 30px;
+    }
+
+    h2{
+      font-size: 20px;
+    }
+
+    h4{
+      font-size: 20px;
+    }
+   
+    .list{
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+  
+    }
+
+    .paragafo_tratamento{
+      width: 500px;
+      font-size: 14px;
+      padding: 30px;
+      text-align: justify;
+    }
+
+    .foto{
+      height: 250px;
+      width: 200px;
+      margin-left: 10px;
+      border-radius: 16px;
+    }
+
+    .bemVindo {
+      font-size: 20px;
+      padding: 15px 5px 5px 15px;
+      background-color: #23232e;
+      color: #fff;
+    }
+
+    
+    .foto-leshliss {
+      width: 400px;
+      height: 240px;
+    }
+
+    .foto-minha-historia{
+      width: 450px;
+      height: 300px;
+    }
+
+    .foto-produto{
+      width: 500px;
+      height: 240px;
+    }
+/* depoimentos  */
+
+.paragrafo-depoimento {
+  width: 500px;
+  font-size: 14px;
+  padding: 30px;
+  text-align: justify;
+}
+
+.ninguem_te_conta_paragrafo{
+  width: 500px;
+  font-size: 14px;
+  padding: 30px;
+  text-align: justify;
+}
+
+.depoimentos{
+  width: 400px;
+}
+
+/* depoimentos  */
+
+  }
+
+  /* Animação de scroll CSS: */
+
+[data-anime] {
+  opacity: 0;
+  transition: 1s;
+}
+
+[data-anime="down"] {
+  transform: translate3d(0, -100%, 0);
+}
+
+[data-anime="up"] {
+  transform: translate3d(0, 100%, 0);
+}
+
+[data-anime="left"] {
+  transform: translate3d(-100%, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(50px ,0 ,0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0 ,0 ,0);
+}
+
+@media (max-width: 600px){
+  [data-anime="right"] {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/*configuração do footer / botão top*/
+
+footer {
+  display:flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.btn-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  visibility: hidden;
+  width: 200px;
+  border-radius: 8px;
+}
+
+.btn-fixed-insta {
+  position: fixed;
+  bottom: 60px;
+  right: 15px;
+  visibility: hidden;
+  width: 150px;
+  border-radius: 8px;
+}
+
+.btn-fixed-insta:hover{
+  position: fixed;
+  bottom: 60px;
+  right: 15px;
+  visibility: hidden;
+  width: 150px;
+  border-radius: 8px; 
+  background-color: burlywood;
+  color: black;
+}
+
+.btn-fixed:hover{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  visibility: hidden;
+  width: 200px;
+  border-radius: 8px; 
+  background-color: burlywood;
+  color: black;
+}
+
+.btn-fixed-insta.visible {
+  visibility: visible;
+}
+
+.btn-fixed.visible {
+  visibility: visible;
+}
+
+.botao-canto {
+  width: 35px;
+}
+/*ainda falta deixar RESPONSIVO*/
+
+
+/*configurando o footer, ainda não fiz*/
+
+
+
+
+/* footer */
+
+.foot{
+  width: 0 auto;
+  height: 90px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: #23232e;
+
+
+}
