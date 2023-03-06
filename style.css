@@ -7,7 +7,6 @@
 
   body {
     overflow-x: hidden;
-
   }
 
   a {
@@ -50,7 +49,7 @@
     margin-left: 32px;
   }
   
-  .mobile-menu {
+  /* .mobile-menu {
     display: none;
     cursor: pointer;
   }
@@ -61,7 +60,7 @@
     background: #fff;
     margin: 8px;
     transition: 0.3s;
-  }
+  } */
   
   .carrossel{
     padding-top: 5px;
@@ -175,7 +174,6 @@ h4 {
   @media (max-width: 600px) {
     body {
       overflow-x: hidden;
-
     }
     .nav-list {
       position: absolute;
@@ -238,25 +236,14 @@ h4 {
     padding: 30px;
     text-align: justify;
     }
-
-  
-
-
-
-    /* Campo flesh liss */
-
-
   }
-
-  
   
   .nav-list.active {
     transform: translateX(0);
-
-    
-
   }
   
+  /* nav list hamburgr responsive */
+
   @keyframes navLinkFade {
     from {
       opacity: 0;
@@ -393,13 +380,42 @@ h4 {
 
 
 
-  /* primeira sessão main */
+  /* primeira sessão main ................................................................................................ */
 
   @media (max-width: 600px) {
 
+    body {
+      overflow-x: hidden;
+    }
+    @keyframes navLinkFade {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+        overflow-x: hidden;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+        
+      }
+    
+    }
+    
+    .mobile-menu.active .line1 {
+      transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    
+    .mobile-menu.active .line2 {
+      opacity: 0;
+    }
+    
+    .mobile-menu.active .line3 {
+      transform: rotate(45deg) translate(-5px, -7px);
+    }
+
     h1{
       padding-top: 25px;
-      font-size: 30px;
+      font-size: 35px;
     }
 
     h2{
@@ -410,6 +426,13 @@ h4 {
       font-size: 20px;
     }
    
+    .logo {
+      font-size: 20px;
+    }
+    .cliqueaqui{
+      font-size: 90%;
+    }
+
     .list{
       color: #fff;
       font-size: 20px;
@@ -418,7 +441,7 @@ h4 {
     }
 
     .paragafo_tratamento{
-      width: 500px;
+      width: 400px;
       font-size: 14px;
       padding: 30px;
       text-align: justify;
@@ -440,42 +463,47 @@ h4 {
 
     
     .foto-leshliss {
-      width: 400px;
-      height: 240px;
+      width: 300px;
+      height: 200px;
     }
 
     .foto-minha-historia{
-      width: 450px;
-      height: 300px;
+      width: 300px;
+      height: 200px;
     }
 
     .foto-produto{
       width: 500px;
       height: 240px;
     }
-/* depoimentos  */
+/* depoimentos ......................................................................................................  */
 
 .paragrafo-depoimento {
-  width: 500px;
+  width: 400px;
   font-size: 14px;
   padding: 30px;
   text-align: justify;
 }
 
 .ninguem_te_conta_paragrafo{
-  width: 500px;
+  width: 400px;
   font-size: 14px;
   padding: 30px;
   text-align: justify;
 }
 
 .depoimentos{
-  width: 400px;
+  width: 300px;
 }
 
-/* depoimentos  */
+.encomende{
+  width: 300px;
+  height: 200px;
+}
+}
+/* depoimentos  ....................................................................*/
 
-  }
+
 
   /* Animação de scroll CSS: */
 
@@ -590,3 +618,62 @@ footer {
 
 
 }
+
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .line1, .line2, .line3 {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: transform 0.3s;
+  }
+  
+  .change .line1 {
+    transform: rotate(-45deg) translate(-6px, 6px);
+  }
+  
+  .change .line2 {
+    opacity: 0;
+  }
+  
+  .change .line3 {
+    transform: rotate(45deg) translate(-6px, -6px);
+  }
+  
+  .nav-list {
+    display: none;
+  }
+  
+  .change .nav-list {
+    display: block;
+  }
+
+  
+  .nav-list li a {
+    font-size: 1rem; /* Usa uma unidade de medida flexível para a fonte */
+    padding: 0.5rem 1rem; /* Usa unidades de medida flexíveis para o padding */
+  }
+  
+  @media only screen and (max-width: 600px) {
+    /* Estilos para dispositivos móveis */
+    .nav-list {
+      display: none; /* Esconde a lista de navegação em dispositivos móveis */
+    }
+    .mobile-menu {
+      display: block; /* Mostra o ícone do menu em dispositivos móveis */
+    }
+  }
+  
+  @media only screen and (min-width: 601px) {
+    /* Estilos para desktops e tablets */
+    .nav-list {
+      display: flex; /* Mostra a lista de navegação em desktops e tablets */
+    }
+    .mobile-menu {
+      display: none; /* Esconde o ícone do menu em desktops e tablets */
+    }
+  }
